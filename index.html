@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+<title>Khan Rubix - Queue Underflow</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+    .mySlides {display:none}
+    .w3-tag, .fa {cursor:pointer}
+    .w3-tag {height:15px;width:15px;padding:0;margin-top:6px}
+
+    body, html {
+        height: 100%;
+        line-height: 1.8;
+    }
+
+    /* Full height image header */
+    .bgimg-1 {
+        background-position: center;
+        background-size: cover;
+        background-image: url("bigimage.gif");
+        min-height: 100%;
+    }
+
+    .w3-bar .w3-button {
+        padding: 10px;
+        align-content: center;
+    }
+</style>
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+    <div class="w3-bar w3-white w3-center w3-card" id="myNavbar">
+        <a href="#home" class="w3-bar-item w3-button w3-wide"><img src="logo.png" width="150" height="25"/></a>
+        <!-- Right-sided navbar links -->
+        <div class="w3-right w3-hide-small">
+            <a href="#about" class="w3-bar-item w3-center w3-button">About</a>
+            <a href="#team" class="w3-center w3-bar-item w3-button"> Team</a>
+            <a href="#scope" class="w3-center w3-bar-item w3-button"> Scope</a>
+            <a href="#solution" class="w3-center w3-bar-item w3-button"> Solution</a>
+            <a href="#highlights" class="w3-center w3-bar-item w3-button"> Highlights</a>
+            <a href="#implementation" class="w3-center w3-bar-item w3-button"> Implementation</a>
+            <a href="#lessons" class="w3-center w3-bar-item w3-button"> Lessons Learned</a>
+        </div>
+        <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+
+        <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+</div>
+
+<!-- Sidebar on small screens when clicking the menu icon -->
+<nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
+    <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">X</a>
+    <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">About</a>
+    <a href="#team" onclick="w3_close()" class="w3-bar-item w3-button">Team</a>
+    <a href="#scope" onclick="w3_close()" class="w3-bar-item w3-button">Scope</a>
+    <a href="#solution" onclick="w3_close()" class="w3-bar-item w3-button">Solution</a>
+    <a href="#highlights" onclick="w3_close()" class="w3-bar-item w3-button">Highlights</a>
+    <a href="#implementation" onclick="w3_close()" class="w3-bar-item w3-button">Implementation</a>
+    <a href="#lessons" onclick="w3_close()" class="w3-bar-item w3-button">Lessons Learned</a>
+</nav>
+
+<!-- Header with full-height image -->
+<header class="bgimg-1 w3-display-container w3-grayscale-min" id="home">
+    <div class="w3-display-left w3-text-white" style="padding:48px">
+        <span class="w3-jumbo w3-hide-small">Khan Rubix</span><br>
+        <span class="w3-xxlarge w3-hide-large w3-hide-medium">Khan Rubix</span><br>
+        <span class="w3-large">Team: Queue Underflow</span>
+        <p><a href="#about" class="w3-button w3-white w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off">Learn more about this project</a></p>
+    </div> </header>
+
+
+<!-- Team Section -->
+<div class="w3-container w3-center" style="padding:128px 16px" id="team">
+    <h3 class="w3-center">THE TEAM</h3>
+    <div class="w3-row-padding w3-center" style="margin-top:64px">
+        <div class="w3-col l2 m6 w3-margin-bottom w3-center">
+            <div class="w3-card w3-center">
+                <img src="justin.jpg" alt="Justin" style="width:100%">
+                <div class="w3-container">
+                    <h3>Justin Duong</h3>
+                    <p class="w3-opacity">Programmer</p>
+                </div>
+            </div>
+        </div>
+        <div class="w3-col l2 m6 w3-margin-bottom w3-center">
+            <div class="w3-card w3-center" align="center">
+                <img src="jared.jpg" alt="Jared" style="width:100%">
+                <div class="w3-container align="center">
+                <h3>Jared Leong</h3>
+                <p class="w3-opacity">Scrum Master</p>
+            </div>
+        </div>
+    </div>
+    <div class="w3-col l2 m6 w3-margin-bottom w3-center">
+        <div class="w3-card w3-centered">
+            <img src="cam.jpg" alt="Cameron" style="width:100%">
+            <div class="w3-container">
+                <h3>Cameron Li</h3>
+                <p class="w3-opacity">Programmer</p>
+            </div>
+        </div>
+    </div>
+    <div class="w3-col l2 m6 w3-margin-bottom w3-center">
+        <div class="w3-card w3-centered">
+            <img src="kev.png" alt="Kevin" style="width:100%">
+            <div class="w3-container">
+                <h3>Kevin Mouayang</h3>
+                <p class="w3-opacity">Programmer</p>
+            </div>
+        </div>
+    </div>
+    <div class="w3-col l2 m6 w3-margin-bottom w3-centered" align="center">
+        <div class="w3-card w3-centered" align="center">
+            <img src="me.jpg" alt="Cassandra" style="width:100%">
+            <div class="w3-container w3-centered" align="center">
+                <h3>Cassandra Pizarro</h3>
+                <p class="w3-opacity">Programmer</p>
+            </div>
+        </div>
+    </div>
+    <div class="w3-col l2 m6 w3-margin-bottom w3-centered">
+        <div class="w3-card w3-centered">
+            <img src="jacob.jpg" alt="Jacob" style="width:100%" style="height"100%">
+            <div class="w3-container w3-centered">
+                <h3>Jacob Wurz</h3>
+                <p class="w3-opacity">Lead Programmer</p>
+            </div>
+        </div>
+    </div>
+
+</div>
+</div>
+
+<!-- About Section -->
+<div class="w3-container w3-light-grey" style="padding:128px 16px" id="about">
+    <h3 class="w3-center">BACKGROUND</h3>
+    <div class="w3-row-padding w3-center" style="margin-top:64px">
+        <div class="w3-half">
+            <i class="fa fa-desktop w3-margin-bottom w3-jumbo w3-center"></i>
+            <p class="w3-large">Our Client</p>
+            <p>Our client is Catalysis group founder and consulting project manager Payson Hall. He works with private and public clients consult with Payson for numerous projects, ranging from million dollar projects to our
+                senior project. Payson was also previously a software engineer.</p>
+        </div>
+        <div class="w3-half">
+            <i class="fa fa-question-circle w3-margin-bottom w3-jumbo"></i>
+            <p class="w3-large">The Problem</p>
+            <p>There aren't many ways to transfer private data securely, so Payson approached with a project proposal of creating
+                a program where you can input any type of file and encrypt it. After a file is encrypted, the outputted file should have a .khn extension.</p>
+        </div>
+    </div>
+</div>
+
+
+<div class="w3-container" style="padding:128px 16px" id="scope">
+    <h3 class="w3-center">SCOPE</h3>
+    <p class="w3-center w3-large"> The program should be able to: </p>
+    <div class="w3-row-padding" style="margin-top:64px">
+        <div class="w3-half w3-center">
+            <li>Read a file text into an array</li>
+            <li>Use byte freuquency analysis as input into a heat map for bit code analysis</li>
+            <li>Use Huffman Coding to compress the size of the array and knock off byte boundaries</li>
+        </div>
+
+        <div class="w3-half w3-center">
+            <li>Run on both Mac and Windows OS</li>
+            <li>Ensure that the size of the file is less than 12MB (max size)</li>
+            <li>Have the ability to decode the array back into the file with the same name</li>
+        </div>
+    </div>
+</div>
+
+
+<div class="w3-container w3-light-grey" style="padding:128px 16px" id="solution">
+    <h3 class="w3-center">SOLUTION</h3>
+    <p class="w3-center w3-large">Our approach to the solution was to create an encryption scheme closely following the
+        implementation envisioned by our client in the project proposal.</p>
+    <p class="w3-center w3-large">Click to see our prototypes.</p>
+    <center>
+        <a href="1.png" target=_blank class="w3-button w3-white w3-padding-large w3-large w3-margin-top w3-hover-opacity-off">Word Frequency Analysis</a>
+        <a href="2.png" target=_blank class="w3-button w3-white w3-padding-large w3-large w3-margin-top w3-hover-opacity-off">Huffman Coding</a>
+        <a href="3.jpg" target=_blank class="w3-button w3-white w3-padding-large w3-large w3-margin-top w3-hover-opacity-off">Byte Frequency Analysis</a>
+        <a href="4.png" target=_blank class="w3-button w3-white w3-padding-large w3-large w3-margin-top w3-hover-opacity-off">Rubix Array and Bitshift</a>
+    </center>
+</div>
+
+
+<div class="w3-container" style="padding:128px 16px" id="highlights">
+    <h3 class="w3-center">HIGHLIGHTS</h3>
+
+    <div class="w3-quarter w3-center">
+        <span class="w3-xxlarge">1.</span>
+        <br>We were able to learn something new.
+    </div>
+    <div class="w3-quarter w3-center">
+        <span class="w3-xxlarge">2.</span>
+        <br>Our client was always reachable through email or zoom.
+    </div>
+    <div class="w3-quarter w3-center">
+        <span class="w3-xxlarge">3.</span>
+        <br>Great communication between teammates.
+    </div>
+    <div class="w3-quarter w3-center">
+        <span class="w3-xxlarge">4.</span>
+        <br>We were able to improve our coding skills.
+    </div>
+</div>
+
+
+<div class="w3-container w3-light-grey" style="padding:128px 16px" id="implementation">
+    <h3 class="w3-center">IMPLEMENTATION</h3>
+    <p class="w3-center w3-large">We could put a gif demoing how it works? and then put bullet points that illustrate
+        how to run the program</p>
+</div>
+</div>
+
+
+<div class="w3-container" style="padding:128px 16px" id="lessons">
+    <h3 class="w3-center">LESSONS LEARNED</h3>
+    <p class="w3-center w3-large">~lessons learned here~</p>
+</div>
+</div>
+
+
+<!-- Footer -->
+<footer class="w3-center w3-black w3-padding-64">
+    <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+    <p>Shoutout to W3 Schools for the template. Thank you for your service. </p>
+</footer>
+
+<script>
+    // Modal Image Gallery
+    function onClick(element) {
+        document.getElementById("img01").src = element.src;
+        document.getElementById("modal01").style.display = "block";
+        var captionText = document.getElementById("caption");
+        captionText.innerHTML = element.alt;
+    }
+
+
+    // Toggle between showing and hiding the sidebar when clicking the menu icon
+    var mySidebar = document.getElementById("mySidebar");
+
+    function w3_open() {
+        if (mySidebar.style.display === 'block') {
+            mySidebar.style.display = 'none';
+        } else {
+            mySidebar.style.display = 'block';
+        }
+    }
+
+    // Close the sidebar with the close button
+    function w3_close() {
+        mySidebar.style.display = "none";
+    }
+
+    // Slideshow
+    var slideIndex = 1;
+    showDivs(slideIndex);
+
+    function plusDivs(n) {
+        showDivs(slideIndex += n);
+    }
+
+    function currentDiv(n) {
+        showDivs(slideIndex = n);
+    }
+
+    function showDivs(n) {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("demodots");
+        if (n > x.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = x.length} ;
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" w3-white", "");
+        }
+        x[slideIndex-1].style.display = "block";
+        dots[slideIndex-1].className += " w3-white";
+    }
+</script>
+
+</body>
+</html>
