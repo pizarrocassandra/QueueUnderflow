@@ -24,6 +24,20 @@
         background-image: url("bigimage.gif");
         min-height: 100%;
     }
+    .row {
+        min-height: 600px;
+        height: calc(100vh); }
+    .box-with-humber {
+        position: relative;
+        left: 4rem;}
+    .box-with-humber .number-behind {
+        font-size: 8rem;
+        position: absolute;
+        z-index: -1;
+        top: -4rem;
+        left: auto;
+        font-weight: 900;
+        color: #f2f4f5; }
 
     .w3-bar .w3-button {
         padding: 10px;
@@ -193,22 +207,33 @@
 
 <div class="w3-container" style="padding:128px 16px" id="highlights">
     <h3 class="w3-center">HIGHLIGHTS</h3>
-
+<div class="w3-quarter w3-center">
+    <div class="p-3 box-with-humber w3-center">
+        <div class="number-behind w3-center">01.</div>
+        <br>
+    </div>
+    <p>We were able to learn about the basics of encryption.</p>
+</div>
     <div class="w3-quarter w3-center">
-        <span class="w3-xxlarge">1.</span>
-        <br>We were able to learn something new.
+    <div class="p-3 box-with-humber w3-center">
+        <div class="number-behind w3-center">02.</div>
+        <br>
+    </div>
+        <p>Our client was always reachable through email or zoom.</p>
     </div>
     <div class="w3-quarter w3-center">
-        <span class="w3-xxlarge">2.</span>
-        <br>Our client was always reachable through email or zoom.
+    <div class="p-3 box-with-humber w3-center">
+        <div class="number-behind w3-center">03.</div>
+        <br>
+    </div>
+        <p>Great communication between teammates.</p>
     </div>
     <div class="w3-quarter w3-center">
-        <span class="w3-xxlarge">3.</span>
-        <br>Great communication between teammates.
+    <div class="p-3 box-with-humber w3-center">
+        <div class="number-behind w3-center">04.</div>
+        <br>
     </div>
-    <div class="w3-quarter w3-center">
-        <span class="w3-xxlarge">4.</span>
-        <br>We were able to improve our coding skills.
+        <p>We were able to improve our coding skills.</p>
     </div>
 </div>
 
@@ -223,7 +248,42 @@
 
 <div class="w3-container" style="padding:128px 16px" id="lessons">
     <h3 class="w3-center">LESSONS LEARNED</h3>
-    <p class="w3-center w3-large">~lessons learned here~</p>
+    <div class="w3-row-padding w3-center" style="margin-top:64px">
+        <div class="w3-quarter">
+            <i class="fa fa-asterisk w3-margin-bottom w3-jumbo w3-center"></i>
+            <p>Implementing different pieces of code is harder than we thought</p>
+        </div>
+        <div class="w3-quarter">
+            <i class="fa fa-bug w3-margin-bottom w3-jumbo"></i>
+            <p>Debugging without a UI is difficult</p>
+        </div>
+        <div class="w3-quarter">
+            <i class="fa fa-cogs w3-margin-bottom w3-jumbo"></i>
+            <p>Learned a new compression algorithm (Huffman)</p>
+        </div>
+        <div class="w3-quarter">
+            <i class="fa fa-code w3-margin-bottom w3-jumbo"></i>
+            <p>Splitting up code that is supposed to work on its own is difficult than we thought</p>
+        </div>
+    <div class="w3-quarter">
+        <i class="fa fa-code-fork w3-margin-bottom w3-jumbo"></i>
+        <p>Learned a little bit of C on the fly since most of us were familiar with C++</p>
+    </div>
+    <div class="w3-quarter">
+        <i class="fa fa-keyboard-o w3-margin-bottom w3-jumbo"></i>
+        <p>Got to use IDEs we’ve never used before (Intellij, CLion)</p>
+    </div>
+    <div class="w3-quarter">
+        <i class="fa fa-question-circle w3-margin-bottom w3-jumbo"></i>
+        <p>Better to ask questions now rather than waiting</p>
+    </div>
+    <div class="w3-quarter">
+        <i class="fa fa-users w3-margin-bottom w3-jumbo"></i>
+        <p>Making sure the team is on the same page is important</p>
+    </div>
+    </div>
+
+
 </div>
 </div>
 
